@@ -12,12 +12,6 @@ maps["rp_downtown_v2"] = {
 }	
 
 hook.Add("InitPostEntity", "PD_Door_Spawn", function()
-	for k,v in pairs(ents.GetAll()) do
-		if v:GetClass()=="pd_door" then
-			v:Remove()
-		end
-	end
-
 	local map = string.lower(game.GetMap())
 	local pos = maps[map] 
 	if (!pos) then return end
