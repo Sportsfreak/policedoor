@@ -1,0 +1,6 @@
+{
+	"title"		:	"Police Door",
+	"type"		:	"addon",
+	"tags"		:	[ "build", "roleplay" ],
+	"description":	"A door that only government officials can go through",
+}
