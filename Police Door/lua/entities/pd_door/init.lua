@@ -3,9 +3,7 @@ AddCSLuaFile("shared.lua")
 
 include("shared.lua")
 
-local P_Groups = {}
-P_Groups["Civil Protection"] = true
-P_Groups["Civil Protection Chief"] = true
+local P_Groups = GAMEMODE.CivilProtection or {}
 
 function ENT:Initialize()
 	self:SetModel("models/hunter/plates/plate1x3.mdl")
@@ -40,7 +38,7 @@ function ENT:Touch(ent)
 		if ent:IsPlayer() then
 			local Closed = true
 			for k,v in pairs(P_Groups) do
-				if team.GetName(ent:Team())==k then
+				if P_Groups[ent:Team()] then
 					Closed = false
 				end
 			end
